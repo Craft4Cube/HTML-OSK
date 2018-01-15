@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML OSK V2.0</title> 
+        <meta charset="UTF-8">
+        <link href="css/metro.css" rel="stylesheet">
+        <link href="css/metro-icons.css" rel="stylesheet">
+        <link href="css/metro-responsive.css" rel="stylesheet">
+        <script src="js/jquery.js"></script>
+        <script src="js/metro.js"></script>   
+        <style>
+
+            .muted {
+              primary;
+              background-color: rgb(119,119,119);
+              color: rgb(220,220,220);
+            }
+
+            .key_normal {
+              width: 5.9%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%;   
+              padding-top: 0px;   
+              padding-bottom: 0px;
+            }  
+            .key_rbacksp {
+              width: 13%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%;
+              padding-top: 0px;   
+              padding-bottom: 0px;
+            }         
+            .key_lcaps {
+              width: 10.9%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%;  
+              padding-top: 0px;   
+              padding-bottom: 0px; 
+            }        
+            .key_ltab, .key_lctrl, .key_rctrl {
+              width: 8.4%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%;  
+              padding-top: 0px;   
+              padding-bottom: 0px; 
+            }           
+            .key_lshift {
+              width: 7.4%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%; 
+              padding-top: 0px;   
+              padding-bottom: 0px;  
+            }            
+            .key_rshift {
+              width: 16%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%; 
+              padding-top: 0px;   
+              padding-bottom: 0px;  
+            }                    
+            .key_lwin, .key_lalt, .key_ralt, .key_rwin, .key_rmenu {
+              width: 7.4%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%; 
+              padding-top: 0px;   
+              padding-bottom: 0px;  
+            }                      
+            .key_space {
+              width: 38%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%; 
+              padding-top: 0px;   
+              padding-bottom: 0px;  
+            }    
+            .key_tenter {
+              width: 8.4%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%;
+              padding-top: 0px;   
+              padding-bottom: 0px;   
+            }    
+            .key_benter {
+              width: 5.9%;
+              height: 48px;
+              margin-left: 0.2%;   
+              margin-right: 0.2%;  
+              padding-top: 0px;   
+              padding-bottom: 0px; 
+            }    
+            .symbol {
+              font-size: 150%;            
+            }    
+            #wrap {
+                float: left;
+                position: relative;
+                left: 50%;
+                width: 90%;
+            }
+            #wrap2 {
+                float: left;
+                position: relative;
+                left: 0%;
+                width: 100%;
+            }
+            #content {
+                float: center;
+                position: relative;
+                left: -50%;
+            }
+            
+            table, th, td {
+                width: 100%;
+                border: 2px solid transparent;
+            }
+            td {
+                height: 48px;
+                line-height: 48px;
+            }
+            .gen_key {
+                height: 100%;           
+            }
+        </style>
+    </head>
+    <body class="bg-darkTeal">
+        <div style="display:block;margin-top:32px;margin-bottom:32px">
+        <div id="wrap2">
+            <div id="wrap">
+              <div id="content">
+                <h1 style="width: 500px; color: white">HTML OSK V2.0</h1>
+
+                <table><tr><td>                
+                <div class="input-control text full-size" data-role="input">
+                    <input type="text" name="preview" id="preview" style="padding-right: 34px;">
+                    <button class="button helper-button clear" tabindex="-1" type="button"><span class="mif-cross"></span></button>
+                </div>
+                </td></tr></table>
+                <table><tr>
+                <td class="key_normal"><button type="button" id="key_caret" onclick="gen_keyPressed('^')" class="button primary gen_key" style="width:100%">^</button></td>
+                <td class="key_normal"><button type="button" id="key_1" onclick="gen_keyPressed('1')" class="button primary gen_key" style="width:100%">1</button></td>
+                <td class="key_normal"><button type="button" id="key_2" onclick="gen_keyPressed('2')" class="button primary gen_key" style="width:100%">2</button></td>
+                <td class="key_normal"><button type="button" id="key_3" onclick="gen_keyPressed('3')" class="button primary gen_key" style="width:100%">3</button></td>
+                <td class="key_normal"><button type="button" id="key_4" onclick="gen_keyPressed('4')" class="button primary gen_key" style="width:100%">4</button></td>
+                <td class="key_normal"><button type="button" id="key_5" onclick="gen_keyPressed('5')" class="button primary gen_key" style="width:100%">5</button></td>
+                <td class="key_normal"><button type="button" id="key_6" onclick="gen_keyPressed('6')" class="button primary gen_key" style="width:100%">6</button></td>
+                <td class="key_normal"><button type="button" id="key_7" onclick="gen_keyPressed('7')" class="button primary gen_key" style="width:100%">7</button></td>
+                <td class="key_normal"><button type="button" id="key_8" onclick="gen_keyPressed('8')" class="button primary gen_key" style="width:100%">8</button></td>
+                <td class="key_normal"><button type="button" id="key_9" onclick="gen_keyPressed('9')" class="button primary gen_key" style="width:100%">9</button></td>
+                <td class="key_normal"><button type="button" id="key_0" onclick="gen_keyPressed('0')" class="button primary gen_key" style="width:100%">0</button></td>
+                <td class="key_normal"><button type="button" id="key_ss" onclick="gen_keyPressed('ß')" class="button primary gen_key" style="width:100%">ß</button></td>
+                <td class="key_normal"><button type="button" id="key_grave" onclick="gen_keyPressed('´')" class="button primary gen_key" style="width:100%">´</button></td>
+                <td class="key_rbacksp"><button type="button" id="key_backsp" onclick="backSpace()" class="button primary gen_key symbol" style="width:100%">←</button></td>
+                </tr></table><table><tr>
+                <td class="key_ltab"><button type="button" id="key_tab" class="button muted gen_key symbol" style="width:100%">↹</button>
+                <td class="key_normal"><button type="button" id="key_q" onclick="gen_keyPressed('q')" class="button primary gen_key" style="width:100%">Q</button></td>
+                <td class="key_normal"><button type="button" id="key_w" onclick="gen_keyPressed('w')" class="button primary gen_key" style="width:100%">W</button></td>
+                <td class="key_normal"><button type="button" id="key_e" onclick="gen_keyPressed('e')" class="button primary gen_key" style="width:100%">E</button></td>
+                <td class="key_normal"><button type="button" id="key_r" onclick="gen_keyPressed('r')" class="button primary gen_key" style="width:100%">R</button></td>
+                <td class="key_normal"><button type="button" id="key_t" onclick="gen_keyPressed('t')" class="button primary gen_key" style="width:100%">T</button></td>
+                <td class="key_normal"><button type="button" id="key_z" onclick="gen_keyPressed('z')" class="button primary gen_key" style="width:100%">Z</button></td>
+                <td class="key_normal"><button type="button" id="key_u" onclick="gen_keyPressed('u')" class="button primary gen_key" style="width:100%">U</button></td>
+                <td class="key_normal"><button type="button" id="key_i" onclick="gen_keyPressed('i')" class="button primary gen_key" style="width:100%">I</button></td>
+                <td class="key_normal"><button type="button" id="key_o" onclick="gen_keyPressed('o')" class="button primary gen_key" style="width:100%">O</button></td>
+                <td class="key_normal"><button type="button" id="key_p" onclick="gen_keyPressed('p')" class="button primary gen_key" style="width:100%">P</button></td>
+                <td class="key_normal"><button type="button" id="key_ue" onclick="gen_keyPressed('ü')" class="button primary gen_key" style="width:100%">Ü</button></td>
+                <td class="key_normal"><button type="button" id="key_plus" onclick="gen_keyPressed('+')" class="button primary gen_key" style="width:100%">+</button></td>
+                <td class="key_tenter"><button type="button" id="key_return" onclick="returnPressed()" class="button primary gen_key" style="width:100%">Enter</button></td>
+                </tr></table><table><tr>
+                <td class="key_lcaps"><button type="button" id="key_caps" onclick="toggle_caps()" class="button primary gen_key symbol" style="width:100%">⇩</button></td>
+                <td class="key_normal"><button type="button" id="key_a" onclick="gen_keyPressed('a')" class="button primary gen_key" style="width:100%">A</button></td>
+                <td class="key_normal"><button type="button" id="key_s" onclick="gen_keyPressed('s')" class="button primary gen_key" style="width:100%">S</button></td>
+                <td class="key_normal"><button type="button" id="key_d" onclick="gen_keyPressed('d')" class="button primary gen_key" style="width:100%">D</button></td>
+                <td class="key_normal"><button type="button" id="key_f" onclick="gen_keyPressed('f')" class="button primary gen_key" style="width:100%">F</button></td>
+                <td class="key_normal"><button type="button" id="key_g" onclick="gen_keyPressed('g')" class="button primary gen_key" style="width:100%">G</button></td>
+                <td class="key_normal"><button type="button" id="key_h" onclick="gen_keyPressed('h')" class="button primary gen_key" style="width:100%">H</button></td>
+                <td class="key_normal"><button type="button" id="key_j" onclick="gen_keyPressed('j')" class="button primary gen_key" style="width:100%">J</button></td>
+                <td class="key_normal"><button type="button" id="key_k" onclick="gen_keyPressed('k')" class="button primary gen_key" style="width:100%">K</button></td>
+                <td class="key_normal"><button type="button" id="key_l" onclick="gen_keyPressed('l')" class="button primary gen_key" style="width:100%">L</button></td>
+                <td class="key_normal"><button type="button" id="key_oe" onclick="gen_keyPressed('ö')" class="button primary gen_key" style="width:100%">Ö</button></td>
+                <td class="key_normal"><button type="button" id="key_ae" onclick="gen_keyPressed('ä')" class="button primary gen_key" style="width:100%">Ä</button></td>
+                <td class="key_normal"><button type="button" id="key_num" onclick="gen_keyPressed('#')" class="button primary gen_key" style="width:100%">#</button></td>
+                <td class="key_benter"><button type="button" id="key_breturn" onclick="returnPressed()" class="button primary gen_key" style="width:100%"> </button></td>
+                </tr></table><table><tr>
+                <td class="key_lshift"><button type="button" id="key_lshift" onclick="toggle_shift()" class="button primary gen_key symbol" style="width:100%">⇧</button></td>
+                <td class="key_normal"><button type="button" id="key_st" onclick="gen_keyPressed('<')" class="button primary gen_key" style="width:100%"><</button></td>
+                <td class="key_normal"><button type="button" id="key_y" onclick="gen_keyPressed('y')" class="button primary gen_key" style="width:100%">Y</button></td>
+                <td class="key_normal"><button type="button" id="key_x" onclick="gen_keyPressed('x')" class="button primary gen_key" style="width:100%">X</button></td>
+                <td class="key_normal"><button type="button" id="key_c" onclick="gen_keyPressed('c')" class="button primary gen_key" style="width:100%">C</button></td>
+                <td class="key_normal"><button type="button" id="key_v" onclick="gen_keyPressed('v')" class="button primary gen_key" style="width:100%">V</button></td>
+                <td class="key_normal"><button type="button" id="key_b" onclick="gen_keyPressed('b')" class="button primary gen_key" style="width:100%">B</button></td>
+                <td class="key_normal"><button type="button" id="key_n" onclick="gen_keyPressed('n')" class="button primary gen_key" style="width:100%">N</button></td>
+                <td class="key_normal"><button type="button" id="key_m" onclick="gen_keyPressed('m')" class="button primary gen_key" style="width:100%">M</button></td>
+                <td class="key_normal"><button type="button" id="key_comma" onclick="gen_keyPressed(',')" class="button primary gen_key" style="width:100%">,</button></td>
+                <td class="key_normal"><button type="button" id="key_dot" onclick="gen_keyPressed('.')" class="button primary gen_key" style="width:100%">.</button></td>
+                <td class="key_normal"><button type="button" id="key_dash" onclick="gen_keyPressed('-')" class="button primary gen_key" style="width:100%">-</button></td>
+                <td class="key_rshift"><button type="button" id="key_rshift" onclick="toggle_shift()" class="button primary gen_key symbol" style="width:100%">⇧</button></td>
+                </tr></table><table><tr>
+                <td class="key_lctrl"><button type="button" id="key_lctrl" onclick="toggle_ctrl()" class="button primary gen_key" style="width:100%">Strg</button></td>
+                <td class="key_lwin"><button type="button" id="key_lwin" class="button muted gen_key" style="width:100%">Win</button></td>
+                <td class="key_lalt"><button type="button" id="key_lalt" onclick="toggle_alt()" class="button primary gen_key" style="width:100%">Alt</button></td>
+                <td class="key_space"><button type="button" id="key_space" onclick="gen_keyPressed(' ')" class="button primary gen_key" style="width:100%"> </button></td>
+                <td class="key_ralt"><button type="button" id="key_ralt" onclick="toggle_altgr()" class="button primary gen_key" style="width:100%">Alt Gr</button></td>
+                <td class="key_rwin"><button type="button" id="key_rwin" class="button muted gen_key" style="width:100%">Win</button></td>
+                <td class="key_rmenu"><button type="button" id="key_rmenu" class="button muted gen_key" style="width:100%">Menu</button></td>
+                <td class="key_rctrl"><button type="button" id="key_rctrl" onclick="toggle_ctrl()" class="button primary gen_key" style="width:100%">Strg</button></td>
+                </tr></table>
+              </div>
+            </div>
+          </div>
+          </div>
+        <script>
+          var text = "";
+          caps = false;
+          capslock = false;
+          ctrl = false;
+          alt = false;
+          function toggle_ctrl() {
+            if (caps) {toggle_caps();}
+            if (ctrl) {
+                ctrl = false;
+                document.getElementById("key_lctrl").classList.remove('info');
+                document.getElementById("key_lctrl").classList.add('primary');
+                document.getElementById("key_rctrl").classList.remove('info');
+                document.getElementById("key_rctrl").classList.add('primary');
+            } else {
+                ctrl = true;
+                document.getElementById("key_lctrl").classList.remove('primary');
+                document.getElementById("key_lctrl").classList.add('info');
+                document.getElementById("key_rctrl").classList.remove('primary');
+                document.getElementById("key_rctrl").classList.add('info');
+            } 
+            if (ctrl && alt) {
+                document.getElementById("key_ralt").classList.remove('primary');
+                document.getElementById("key_ralt").classList.add('info');
+                modifyAltGrKeys();
+            } else {
+                document.getElementById("key_ralt").classList.remove('info');
+                document.getElementById("key_ralt").classList.add('primary');
+                unmodifyAltGrKeys();
+            }
+          }
+          function toggle_alt() {
+            if (caps) {toggle_caps();}
+            if (alt) {
+                alt = false;
+                document.getElementById("key_lalt").classList.remove('info');
+                document.getElementById("key_lalt").classList.add('primary');
+            } else {
+                alt = true;
+                document.getElementById("key_lalt").classList.remove('primary');
+                document.getElementById("key_lalt").classList.add('info');
+            } 
+            if (ctrl && alt) {
+                document.getElementById("key_ralt").classList.remove('primary');
+                document.getElementById("key_ralt").classList.add('info');
+                modifyAltGrKeys();
+            } else {
+                document.getElementById("key_ralt").classList.remove('info');
+                document.getElementById("key_ralt").classList.add('primary');
+                unmodifyAltGrKeys();
+            }
+          }
+          function toggle_altgr() {
+            if (caps) {toggle_caps();}
+            if (alt && ctrl) {
+                alt = false;
+                ctrl = false;
+                document.getElementById("key_lalt").classList.remove('info');
+                document.getElementById("key_lalt").classList.add('primary');
+                document.getElementById("key_lctrl").classList.remove('info');
+                document.getElementById("key_lctrl").classList.add('primary');
+                document.getElementById("key_rctrl").classList.remove('info');
+                document.getElementById("key_rctrl").classList.add('primary');
+            } else {
+                alt = true;
+                ctrl = true;
+                document.getElementById("key_lalt").classList.remove('primary');
+                document.getElementById("key_lalt").classList.add('info');
+                document.getElementById("key_lctrl").classList.remove('primary');
+                document.getElementById("key_lctrl").classList.add('info');
+                document.getElementById("key_rctrl").classList.remove('primary');
+                document.getElementById("key_rctrl").classList.add('info');
+            } 
+            if (ctrl && alt) {
+                document.getElementById("key_ralt").classList.remove('primary');
+                document.getElementById("key_ralt").classList.add('info');
+                modifyAltGrKeys();
+            } else {
+                document.getElementById("key_ralt").classList.remove('info');
+                document.getElementById("key_ralt").classList.add('primary');
+                unmodifyAltGrKeys();
+            }
+          }
+          function toggle_caps() {
+            if (alt) {toggle_alt();}
+            if (ctrl) {toggle_ctrl();}
+            if (caps && capslock) {
+                document.getElementById("key_caps").classList.remove('warning');
+                document.getElementById("key_caps").classList.add('primary');
+                document.getElementById("key_lshift").classList.remove('warning');
+                document.getElementById("key_lshift").classList.add('primary');
+                document.getElementById("key_rshift").classList.remove('warning');
+                document.getElementById("key_rshift").classList.add('primary');
+                modifyLowerCaseKeys();
+                caps = false;
+                capslock = false;
+            } else if (caps && !capslock) {
+                document.getElementById("key_caps").classList.remove('success');
+                document.getElementById("key_caps").classList.add('primary');
+                document.getElementById("key_lshift").classList.remove('success');
+                document.getElementById("key_lshift").classList.add('primary');
+                document.getElementById("key_rshift").classList.remove('success');
+                document.getElementById("key_rshift").classList.add('primary');
+                modifyLowerCaseKeys();
+                caps = false;
+                capslock = false;
+            } else {   
+                document.getElementById("key_caps").classList.remove('primary');
+                document.getElementById("key_caps").classList.add('warning');
+                document.getElementById("key_lshift").classList.remove('primary');
+                document.getElementById("key_lshift").classList.add('warning');
+                document.getElementById("key_rshift").classList.remove('primary');
+                document.getElementById("key_rshift").classList.add('warning');
+                modifyUpperCaseKeys();
+                caps = true;
+                capslock = true;
+            }
+          }     
+          function toggle_shift() {
+            if (alt) {toggle_alt();}
+            if (ctrl) {toggle_ctrl();}
+            if (caps && capslock) {
+                document.getElementById("key_caps").classList.remove('warning');
+                document.getElementById("key_caps").classList.add('primary');
+                document.getElementById("key_lshift").classList.remove('warning');
+                document.getElementById("key_lshift").classList.add('primary');
+                document.getElementById("key_rshift").classList.remove('warning');
+                document.getElementById("key_rshift").classList.add('primary');
+                modifyLowerCaseKeys();
+                caps = false;
+                capslock = false;
+            } else if (caps && !capslock) {
+                document.getElementById("key_caps").classList.remove('success');
+                document.getElementById("key_caps").classList.add('primary');
+                document.getElementById("key_lshift").classList.remove('success');
+                document.getElementById("key_lshift").classList.add('primary');
+                document.getElementById("key_rshift").classList.remove('success');
+                document.getElementById("key_rshift").classList.add('primary');
+                modifyLowerCaseKeys();
+                caps = false;
+                capslock = false;
+            } else {   
+                document.getElementById("key_caps").classList.remove('primary');
+                document.getElementById("key_caps").classList.add('success');
+                document.getElementById("key_lshift").classList.remove('primary');
+                document.getElementById("key_lshift").classList.add('success');
+                document.getElementById("key_rshift").classList.remove('primary');
+                document.getElementById("key_rshift").classList.add('success');
+                modifyUpperCaseKeys();
+                caps = true;
+                capslock = false;
+            }
+          }     
+          function gen_keyPressed(key) {
+            if (caps == true && capslock == true) {key = convertToCaps(key);}
+            else if (caps == true && capslock == false) {key = convertToCaps(key); toggle_shift(); }
+            else if (ctrl && alt) {key = convertToAltGr(key); toggle_altgr();}
+            text += key;
+            document.getElementById("preview").value = text;
+          }
+          function convertToCaps(key) {
+            switch (key) {
+              case "^": key = "°"; break;
+              case "1": key = "!"; break;
+              case "2": key = '"'; break;
+              case "3": key = "§"; break;
+              case "4": key = "$"; break;
+              case "5": key = "%"; break;
+              case "6": key = "&"; break;
+              case "7": key = "/"; break;
+              case "8": key = "("; break;
+              case "9": key = ")"; break;
+              case "0": key = "="; break;
+              case "ß": key = "?"; break;
+              case "´": key = "`"; break;
+
+              case "+": key = "*"; break;
+
+              case "#": key = "'"; break;
+
+              case "<": key = ">"; break;
+              case ",": key = ";"; break;
+              case ".": key = ":"; break;
+              case "-": key = "_"; break;
+              default: key = key.toUpperCase();
+            }
+            return key;
+          }
+          function convertToAltGr(key) {
+            switch (key) {
+              case "2": key = "²"; break;
+              case "3": key = "³"; break;
+              case "7": key = '{'; break;
+              case "8": key = "["; break;
+              case "9": key = "]"; break;
+              case "0": key = "}"; break;
+              case "ß": key = "\\"; break;
+              case "q": key = "@"; break;
+              case "e": key = "€"; break;
+              case "+": key = "~"; break;
+              case "<": key = "|"; break;
+              case "m": key = "µ"; break;
+              default: key = key;
+            }
+            return key;
+          }
+          function backSpace() {
+            var text2 = text.substring(0, text.length - 1);
+            text = text2;
+            document.getElementById("preview").value = text;
+          }
+          function returnPressed() {
+            window.location.href = document.getElementById("preview").value;  
+          }
+          function modifyAltGrKeys() {
+            document.getElementById("key_2").innerHTML = "²";
+            document.getElementById("key_3").innerHTML = "³";
+            document.getElementById("key_7").innerHTML = '{';
+            document.getElementById("key_8").innerHTML = "[";
+            document.getElementById("key_9").innerHTML = "]";
+            document.getElementById("key_0").innerHTML = "}";
+            document.getElementById("key_ss").innerHTML = "\\";
+            document.getElementById("key_q").innerHTML = "@";
+            document.getElementById("key_e").innerHTML = "€";
+            document.getElementById("key_plus").innerHTML = "~";
+            document.getElementById("key_st").innerHTML = "|";
+            document.getElementById("key_m").innerHTML = "µ";
+          }
+          function unmodifyAltGrKeys() {
+            document.getElementById("key_2").innerHTML = "2";
+            document.getElementById("key_3").innerHTML = "3";
+            document.getElementById("key_7").innerHTML = '7';
+            document.getElementById("key_8").innerHTML = "8";
+            document.getElementById("key_9").innerHTML = "9";
+            document.getElementById("key_0").innerHTML = "0";
+            document.getElementById("key_ss").innerHTML = "ß";
+            document.getElementById("key_q").innerHTML = "Q";
+            document.getElementById("key_e").innerHTML = "E";
+            document.getElementById("key_plus").innerHTML = "+";
+            document.getElementById("key_st").innerHTML = "<";
+            document.getElementById("key_m").innerHTML = "M";
+          }
+          function modifyUpperCaseKeys() {
+            document.getElementById("key_caret").innerHTML = "°";
+            document.getElementById("key_1").innerHTML = "!";
+            document.getElementById("key_2").innerHTML = '"';
+            document.getElementById("key_3").innerHTML = "§";
+            document.getElementById("key_4").innerHTML = "$";
+            document.getElementById("key_5").innerHTML = "%";
+            document.getElementById("key_6").innerHTML = "&";
+            document.getElementById("key_7").innerHTML = "/";
+            document.getElementById("key_8").innerHTML = "(";
+            document.getElementById("key_9").innerHTML = ")";
+            document.getElementById("key_0").innerHTML = "=";
+            document.getElementById("key_ss").innerHTML = "?";
+            document.getElementById("key_grave").innerHTML = "`";
+            document.getElementById("key_plus").innerHTML = "*";
+            document.getElementById("key_num").innerHTML = "'";
+            document.getElementById("key_st").innerHTML = ">";
+            document.getElementById("key_comma").innerHTML = ";";
+            document.getElementById("key_dot").innerHTML = ":";
+            document.getElementById("key_dash").innerHTML = "_";
+          }
+          function modifyLowerCaseKeys() {
+            document.getElementById("key_caret").innerHTML = "^";
+            document.getElementById("key_1").innerHTML = "1";
+            document.getElementById("key_2").innerHTML = "2";
+            document.getElementById("key_3").innerHTML = "3";
+            document.getElementById("key_4").innerHTML = "4";
+            document.getElementById("key_5").innerHTML = "5";
+            document.getElementById("key_6").innerHTML = "6";
+            document.getElementById("key_7").innerHTML = "7";
+            document.getElementById("key_8").innerHTML = "8";
+            document.getElementById("key_9").innerHTML = "9";
+            document.getElementById("key_0").innerHTML = "0";
+            document.getElementById("key_ss").innerHTML = "ß";
+            document.getElementById("key_grave").innerHTML = "´";
+            document.getElementById("key_plus").innerHTML = "+";
+            document.getElementById("key_num").innerHTML = "#";
+            document.getElementById("key_st").innerHTML = "<";
+            document.getElementById("key_comma").innerHTML = ",";
+            document.getElementById("key_dot").innerHTML = ".";
+            document.getElementById("key_dash").innerHTML = "-";
+          }
+        </script>
+    </body>
+</html>
